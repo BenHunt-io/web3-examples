@@ -1,12 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {
+  Routes,
+  Route,
+  Link,
+  BrowserRouter
+} from 'react-router-dom';
+import Voting from './pages/Voting/Voting';
+
+const Home = () => (<div><Link to="/voting"> voting example </Link></div>);
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/voting" element={<Voting/>}/>
+        <Route path="/faucet"/>
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
