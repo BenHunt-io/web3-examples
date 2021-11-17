@@ -2,6 +2,7 @@ import * as React from 'react';
 import Web3 from 'web3';
 import Layout from '../../components/Layout';
 import votingAbi from '../../blockchain/contracts/output/Voting.json';
+import * as web3Utils from 'web3-utils';
 
 // Configure Provider
 let options = {};
@@ -26,8 +27,8 @@ web3.eth.getAccounts(console.log);
 // myWallet.signTransaction(tx, signedTx => console.log(signedTx));
 
 
-let ganacheWalletAddr = "db72be27b46cd08f51a512d701b8a1f63d62d7f0e4aec68e374e333e0a88623c";
-let ganachePrivKey = "db72be27b46cd08f51a512d701b8a1f63d62d7f0e4aec68e374e333e0a88623c";
+let ganacheWalletAddr = "0xfBD7294B8EC1E03f50cb1e854750bB313Fb06359";
+let ganachePrivKey = "ba599e49b5b273966f96d48f36e4ad8f1f619e9da5cdb18d4198c797d30158bf";
 
 let tx = {
     from : ganacheWalletAddr,
@@ -35,10 +36,14 @@ let tx = {
 }
 
 
+function test(test: web3Utils.AbiItem){
+    console.log(`Printing out contract ${test.type}`);
+}
+
+test(votingAbi[0] as web3Utils.AbiItem)
 
 // Create Contract
-// let VotingContract = new web3.eth.Contract(VotingAbi, )
-
+console.log(votingAbi);
 // let contract = new web3.eth.Contract()
 
 const Voting = () => {
