@@ -10,9 +10,10 @@ contract Voting {
     mapping(address => string) voterMap;
     // candidate -> votes
     mapping(string => uint128) public votes;
+    string public helloWorld;
 
     constructor(){
         votes["Ben"] = 1337;
+        helloWorld = "Hello World";
     }
-
 }
