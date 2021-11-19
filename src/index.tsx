@@ -9,6 +9,7 @@ import {
   BrowserRouter
 } from 'react-router-dom';
 import Voting from './pages/Voting/Voting';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const Home = () => (<div><Link to="/voting"> voting example </Link></div>);
 
